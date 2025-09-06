@@ -46,14 +46,14 @@ export default function Navbar() {
         <nav>
           <div className="nav-links">
             {sections.map((s) => (
-              <a
+              <button 
                 key={s.id}
                 onClick={() => onNavClick(s.id)}
                 className={active === s.id ? "active" : ""}
                 style={{ cursor: "pointer" }}
               >
                 {s.label}
-              </a>
+              </button>
             ))}
           </div>
 
@@ -65,9 +65,9 @@ export default function Navbar() {
           {open && (
             <div className="mobile-menu" role="menu">
               {sections.map((s) => (
-                <a key={s.id} onClick={() => onNavClick(s.id)} style={{cursor:"pointer"}}>
+                <button key={s.id} onClick={() => onNavClick(s.id)} style={{cursor:"pointer"}}>
                   {s.label}
-                </a>
+                </button>
               ))}
             </div>
           )}
