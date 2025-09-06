@@ -32,7 +32,8 @@ export default function Navbar() {
 
   const onNavClick = (id) => {
     setOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -40,34 +41,46 @@ export default function Navbar() {
       <div className="container nav-inner">
         <div className="logo">
           <span className="dot" />
-            <div style={{fontSize:25, opacity:0.85}}><code>&lt;/Sai Sandeep Seelam &gt;</code></div>
+          <div style={{ fontSize: 25, opacity: 0.85 }}>
+            <code>&lt;/Sai Sandeep Seelam &gt;</code>
+          </div>
         </div>
 
         <nav>
+          {/* Desktop Links */}
           <div className="nav-links">
             {sections.map((s) => (
-              <button 
+              <a
+                href={`#${s.id}`}
                 key={s.id}
                 onClick={() => onNavClick(s.id)}
                 className={active === s.id ? "active" : ""}
-                style={{ cursor: "pointer" }}
               >
                 {s.label}
-              </button>
+              </a>
             ))}
           </div>
 
-          {/* mobile */}
-          <button className="hamburger" onClick={() => setOpen(!open)}>
+          {/* Mobile Hamburger */}
+          <button
+            className="hamburger"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
             {open ? <FiX size={20} /> : <FiMenu size={20} />}
           </button>
 
+          {/* Mobile Menu */}
           {open && (
             <div className="mobile-menu" role="menu">
               {sections.map((s) => (
-                <button key={s.id} onClick={() => onNavClick(s.id)} style={{cursor:"pointer"}}>
+                <a
+                  href={`#${s.id}`}
+                  key={`mobile-${s.id}`}
+                  onClick={() => onNavClick(s.id)}
+                >
                   {s.label}
-                </button>
+                </a>
               ))}
             </div>
           )}
