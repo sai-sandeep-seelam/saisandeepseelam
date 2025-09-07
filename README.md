@@ -55,13 +55,3 @@ You can reach out via the contact form on my website or through the following:
 
 - **Email:** [Your Email Here]  
 - **Portfolio:** [https://saisandeepseelam.netlify.app/](https://saisandeepseelam.netlify.app/)  
-
----
-
-## 🖼 Screenshots
-
-![Home Page](https://via.placeholder.com/600x400.png?text=Home+Page+Screenshot)  
-*Home section with introduction and links.*
-
-![Projects Section](https://via.placeholder.com/600x400.png?text=Projects+Screenshot)  
-*Showcase of my projects.*
