@@ -284,7 +284,9 @@
 @media (max-width:660px){
   .app{ gap:10px
   }
-  .logo{ font-size:14px }
+  .logo {
+    font-size: 1rem; 
+  }
   .about{padding:40px 20px }
   .projects{padding:40px 20px }
   .hero-left{ text-align:left; }
