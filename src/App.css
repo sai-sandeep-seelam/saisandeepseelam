@@ -18,7 +18,10 @@
   background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
   border-bottom: 1px solid rgba(255,255,255,0.02);
 }
-
+.logo-text {
+  font-size: 1.6rem; 
+  opacity: 0.85;
+}
 .nav-inner{
   display:flex;
   align-items:center;
@@ -330,12 +333,14 @@
 
 @media (max-width:920px){
     .hero-inner{ flex-direction:column-reverse; gap:30px }
+  .logo-text {font-size: 1.3rem;}
   .about{padding:40px 20px }
   .projects{padding:40px 20px }
   .project-card img{ height:180px }
 }
 @media (max-width:640px){
-    .hero-inner{ flex-direction:column-reverse; gap:30px }
+  .hero-inner{ flex-direction:column-reverse; gap:30px }
+  .logo-text {font-size: 1rem;}
   .about{padding:40px 20px }
   .projects{padding:40px 20px }
   .project-card img{ height:140px }

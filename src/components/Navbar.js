@@ -40,7 +40,7 @@ export default function Navbar({ dark, setDark }) {
       <div className="container nav-inner">
         <div className="nav-top">
           <div className="logo">
-            <div style={{ fontSize: 25, opacity: 0.85 }}>
+            <div className="logo-text">
               <code>&lt;/Sai Sandeep Seelam &gt;</code>
             </div>
           </div>
