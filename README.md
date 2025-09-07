@@ -53,5 +53,5 @@ A stack of cheatsheets for various programming languages. *(Under construction)*
 
 You can reach out via the contact form on my website or through the following:  
 
-- **Email:** [Your Email Here]  
+- **Email:** saisandeepseelam@gmail.com
 - **Portfolio:** [https://saisandeepseelam.netlify.app/](https://saisandeepseelam.netlify.app/)  
