@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import DarkModeToggle from "./DarkModeToggle";
 
 const sections = [
   { id: "hero", label: "Home" },
@@ -8,8 +8,7 @@ const sections = [
   { id: "contact", label: "Contact" },
 ];
 
-export default function Navbar() {
-  const [open, setOpen] = useState(false);
+export default function Navbar({ dark, setDark }) {
   const [active, setActive] = useState("hero");
 
   useEffect(() => {
@@ -30,8 +29,8 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, []);
 
-  const onNavClick = (id) => {
-    setOpen(false);
+  const onNavClick = (e, id) => {
+    e.preventDefault();
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
@@ -39,51 +38,31 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <div className="container nav-inner">
-        <div className="logo">
-          <span className="dot" />
-          <div style={{ fontSize: 25, opacity: 0.85 }}>
-            <code>&lt;/Sai Sandeep Seelam &gt;</code>
+        <div className="nav-top">
+          <div className="logo">
+            <div style={{ fontSize: 25, opacity: 0.85 }}>
+              <code>&lt;/Sai Sandeep Seelam &gt;</code>
+            </div>
+          </div>
+
+          <div aria-hidden="false">
+            <DarkModeToggle dark={dark} setDark={setDark} />
           </div>
         </div>
 
         <nav>
-          {/* Desktop Links */}
-          <div className="nav-links">
+          <div className="nav-links" role="navigation" aria-label="Primary">
             {sections.map((s) => (
               <a
                 href={`#${s.id}`}
                 key={s.id}
-                onClick={() => onNavClick(s.id)}
+                onClick={(e) => onNavClick(e, s.id)}
                 className={active === s.id ? "active" : ""}
               >
                 {s.label}
               </a>
             ))}
           </div>
-
-          {/* Mobile Hamburger */}
-          <button
-            className="hamburger"
-            onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
-          >
-            {open ? <FiX size={20} /> : <FiMenu size={20} />}
-          </button>
-
-          {/* Mobile Menu */}
-          {open && (
-            <div className="mobile-menu" role="menu">
-              {sections.map((s) => (
-                <a
-                  href={`#${s.id}`}
-                  key={`mobile-${s.id}`}
-                  onClick={() => onNavClick(s.id)}
-                >
-                  {s.label}
-                </a>
-              ))}
-            </div>
-          )}
         </nav>
       </div>
     </header>

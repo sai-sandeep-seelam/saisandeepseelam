@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
-import DarkModeToggle from "./components/DarkModeToggle";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
@@ -12,7 +11,7 @@ function App() {
   // theme persisted in localStorage
   const [dark, setDark] = useState(() => {
     const saved = localStorage.getItem("theme");
-    return saved ? JSON.parse(saved) : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return saved ? JSON.parse(saved) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
   });
 
   useEffect(() => {
@@ -24,8 +23,8 @@ function App() {
 
   return (
     <div className="app">
-      <Navbar />
-      <DarkModeToggle dark={dark} setDark={setDark} />
+      {/* pass theme props to Navbar so the toggle lives there */}
+      <Navbar dark={dark} setDark={setDark} />
       <main>
         <Hero />
         <About />
