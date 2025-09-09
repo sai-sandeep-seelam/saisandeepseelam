@@ -294,6 +294,7 @@
   .logo {
     font-size: 1rem; 
   }
+  .logo-text {font-size: 1rem;}
   .about{padding:40px 20px }
   .projects{padding:40px 20px }
   .hero-left{ text-align:left; }
