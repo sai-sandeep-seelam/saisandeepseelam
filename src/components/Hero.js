@@ -74,7 +74,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="hero" style={{ minHeight: "100vh" }}>
+    <section id="hero" className="hero" >
       {/* background container */}
       <div
         className="finisher-header"
