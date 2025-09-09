@@ -14,6 +14,12 @@
   padding: 12px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
+.toggle-btn {
+  position: fixed;
+  right: 20px;
+  top: 15px;
+  z-index: 60;
+}
 :root.dark .navbar{
   background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
   border-bottom: 1px solid rgba(255,255,255,0.02);
@@ -84,7 +90,7 @@
   border-radius: 16px;                     
   padding: 100px;                           
   backdrop-filter: blur(4px);             
-  -webkit-backdrop-filter: blur(12px);    
+  -webkit-backdrop-filter: blur(4px);    
   margin: 0 auto;                          
   max-width: 1200px;  
   z-index: 2;  
@@ -166,8 +172,6 @@
   grid-template-columns: repeat(3,1fr);
   gap:20px;
 }
-@media (max-width:920px){ .projects-grid{ grid-template-columns: repeat(2,1fr)} }
-
 .project-card{
   position:relative;
   border-radius:12px;
@@ -234,7 +238,7 @@
   background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
   color: var(--text);
   font-size: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* same shadow as cards */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
   transition: box-shadow 0.3s, transform 0.2s;
 }
 
@@ -268,7 +272,6 @@
   transform: translateY(-2px);
 }
 
-@media (max-width:720px){ .contact-grid{ grid-template-columns: 1fr } }
 
 /* FOOTER */
 .footer{
@@ -288,17 +291,18 @@
 }
 
 
-@media (max-width:640px){
+@media (max-width:960px){
   .app{ gap:10px
   }
   .logo {
     font-size: 1rem; 
   }
+   .projects-grid{ grid-template-columns: repeat(2,1fr)}
+  .contact-grid{ grid-template-columns: 1fr }
   .logo-text {font-size: 1rem;}
   .about{padding:40px 20px }
   .projects{padding:40px 20px }
   .hero-left{ text-align:left; }
-  /* change column-reverse to column so text stays above profile on mobile */
   .hero-inner{ flex-direction:column-reverse; gap:30px }
   .hero-card{ width:220px }
   .hero{padding:10px}
@@ -306,8 +310,7 @@
   .hero-border{ padding:20px 12px } 
   .about-grid{ grid-template-columns: 1fr }
 }
-/* NAVBAR mobile: stack the nav and put links below logo + toggle */
-@media (max-width:1280px){
+@media (max-width:1200px){
   .nav-inner{
     flex-direction:column;
     align-items:flex-start;
@@ -331,13 +334,4 @@
     width:100%;
     border-radius:8px;
   }
-
-}
-
-
-@media (max-width:920px){
-  .logo-text {font-size: 1.3rem;}
-  .about{padding:40px 20px }
-  .projects{padding:40px 20px }
-  .project-card img{ height:180px }
 }

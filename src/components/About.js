@@ -15,7 +15,7 @@ export default function About() {
                  is going towards Game Development and AI/ML.I'm passionate about learning new technologies 
                  and continuously improving my skills.<br></br><br></br>
                  What excites me most is creating things that people can interact with—something that feels simple, smooth, and meaningful.  
-At my core, I’m a learner, a builder, and someone who enjoys turning imagination into reality.
+                At my core, I’m a learner, a builder, and someone who enjoys turning imagination into reality.
               </p>
 
               <div style={{marginTop:16}}>
@@ -24,7 +24,6 @@ At my core, I’m a learner, a builder, and someone who enjoys turning imaginati
                   <div className="skill">React</div>
                   <div className="skill">JavaScript (ES6+)</div>
                   <div className="skill">HTML & CSS</div>
-                  <div className="skill">Framer Motion</div>
                   <div className="skill">Git</div>
                 </div>
               </div>
