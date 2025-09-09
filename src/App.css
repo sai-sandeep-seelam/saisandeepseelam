@@ -26,6 +26,7 @@
   display:flex;
   align-items:center;
   justify-content:space-between;
+  flex-wrap: wrap;
 }
 
 
@@ -48,6 +49,7 @@
   display:flex;
   gap:22px;
   align-items:center;
+  
 }
 .nav-links a{
   text-decoration:none;
@@ -62,7 +64,6 @@
 }
 
 
-.hamburger{ display:none; cursor:pointer; border:none; background:transparent; font-size:20px }
 
 /* HERO */
 .hero{
@@ -75,18 +76,20 @@
   padding:40px 0 20px;
   overflow:hidden;
 
-  z-index:35;
-  backdrop-filter: blur(6px);
+  z-index:1;
 }
 .hero-border {
   border:2px solid rgba(255,255,255,0.04);
   box-shadow:var(--shadow);
   border-radius: 16px;                     
   padding: 100px;                           
-  backdrop-filter: blur(12px);             
+  backdrop-filter: blur(4px);             
   -webkit-backdrop-filter: blur(12px);    
   margin: 0 auto;                          
-  max-width: 1200px;                       
+  max-width: 1200px;  
+  z-index: 2;  
+  position: relative  ;  
+  background: var(--glass);                 
 }
 
   .hero-inner{
@@ -109,6 +112,7 @@
   font-weight:700;
   margin-bottom:18px;
   font-size:1.5rem; 
+  z-index:2;
 }
 .hero h1{font-size:36px; margin-bottom:12px}
 .hero p{color:var(--muted); font-size:16px; margin-bottom:20px}
@@ -301,9 +305,8 @@
   .hero-border{ padding:20px 12px } 
   .about-grid{ grid-template-columns: 1fr }
 }
-
 /* NAVBAR mobile: stack the nav and put links below logo + toggle */
-@media (max-width:840px){
+@media (max-width:1280px){
   .nav-inner{
     flex-direction:column;
     align-items:flex-start;
@@ -332,16 +335,8 @@
 
 
 @media (max-width:920px){
-    .hero-inner{ flex-direction:column-reverse; gap:30px }
   .logo-text {font-size: 1.3rem;}
   .about{padding:40px 20px }
   .projects{padding:40px 20px }
   .project-card img{ height:180px }
-}
-@media (max-width:640px){
-  .hero-inner{ flex-direction:column-reverse; gap:30px }
-  .logo-text {font-size: 1rem;}
-  .about{padding:40px 20px }
-  .projects{padding:40px 20px }
-  .project-card img{ height:140px }
 }

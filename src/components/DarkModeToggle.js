@@ -3,7 +3,7 @@ import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function DarkModeToggle({ dark, setDark }) {
   return (
-    <div style={{ position: "fixed", right: 20, top: 7, zIndex: 60 }}>
+    <div style={{ position: "fixed", right: 20, top: 15, zIndex: 60 }}>
       <button
         onClick={() => setDark(!dark)}
         className="btn ghost"
